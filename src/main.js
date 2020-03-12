@@ -6,7 +6,6 @@ import firebase from 'firebase/app'; //importing only firebase/app because we do
 import 'firebase/firestore'; //all we need from firebase is the firestore
 
 
-
 Vue.use(VueTextareaAutosize);
 
 Vue.config.productionTip = false
@@ -20,6 +19,8 @@ firebase.initializeApp({ //initializing the firebase sdk snippet
   messagingSenderId: "958596593298",
   appId: "1:958596593298:web:7bff06b0196f3b5e0f584b"
 });
+
+export const db = firebase.firestore(); //importing db as firebase.firestore(), allows us to import db every time we want to use firestore
 
 
 new Vue({
