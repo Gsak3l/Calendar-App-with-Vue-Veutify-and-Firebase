@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import {db} from '@main' 
 export default {
   data: () => ({
     today: new Date().toISOString().substring(0, 10),
@@ -91,22 +92,33 @@ export default {
     type: "month",
     typeToLabel: {
       month: "Month",
-      week: "Week", 
+      week: "Week",
       day: "Day",
       "4day": "4 Days"
     },
     name: null,
-    details: null, 
-    start: null, 
+    details: null,
+    start: null,
     end: null,
     color: "#1976D2",
     currentlyEditing: null,
     selectedEvent: {},
-    selectedElement: null, 
-    selectedOpen: false, 
+    selectedElement: null,
+    selectedOpen: false,
     events: [],
-    dialog: false,
-    
-  })
+    dialog: false
+  }),
+  mounted() {
+    this.getEvents();
+  },
+  methods: {
+    async getEvents() {
+      let snapshot = await db.collection('calEvent').get();
+      let events = [];
+      snapshot.forEach(doc => {
+        console.log(doc);
+      });
+    }
+  }
 };
 </script>
