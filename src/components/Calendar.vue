@@ -84,5 +84,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    today: new Date().toISOString().substring(0, 10),
+    focus: new Date().toISOString().substring(0, 10),
+    type: "month",
+    typeToLabel: {
+      month: "Month",
+      week: "Week", 
+      day: "Day",
+      "4day": "4 Days"
+    },
+    name: null,
+    details: null, 
+    start: null
+  })
+};
 </script>
