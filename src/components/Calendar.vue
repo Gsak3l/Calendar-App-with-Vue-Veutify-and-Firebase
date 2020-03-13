@@ -97,7 +97,16 @@ export default {
     },
     name: null,
     details: null, 
-    start: null
+    start: null, 
+    end: null,
+    color: "#1976D2",
+    currentlyEditing: null,
+    selectedEvent: {},
+    selectedElement: null, 
+    selectedOpen: false, 
+    events: [],
+    dialog: false,
+    
   })
 };
 </script>
