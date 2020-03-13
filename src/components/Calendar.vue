@@ -84,29 +84,29 @@
 </template>
 
 <script>
-import {db} from '@main' 
+import { db } from "@/main";
 export default {
   data: () => ({
     today: new Date().toISOString().substring(0, 10),
     focus: new Date().toISOString().substring(0, 10),
-    type: "month",
+    type: "month", 
     typeToLabel: {
-      month: "Month",
+      month: "Month", 
       week: "Week",
-      day: "Day",
+      day: "Day", 
       "4day": "4 Days"
     },
-    name: null,
+    name: null, 
     details: null,
-    start: null,
-    end: null,
+    start: null, 
+    end: null, 
     color: "#1976D2",
-    currentlyEditing: null,
-    selectedEvent: {},
+    currentlyEditing: null, 
+    selectedEvent: {}, 
     selectedElement: null,
-    selectedOpen: false,
-    events: [],
-    dialog: false
+    selectedOpen: false, 
+    events: [], 
+    dialog: false,
   }),
   mounted() {
     this.getEvents();
